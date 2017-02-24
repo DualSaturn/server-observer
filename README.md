@@ -5,3 +5,4 @@ To generate the output, just type
 server-observer, what do you see
 ```
 in discord chat.
+This was made using the [discord.py](https://github.com/Rapptz/discord.py) API wrapper for discord.
