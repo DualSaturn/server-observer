@@ -8,7 +8,7 @@ async def on_message(message):
     if '{}, what do you see'.format(client.user.name) in message.content.lower():
         chat_log_text = ''
         async for msg in client.logs_from(message.channel, limit = 500):
-            if not msg.author.bot and 'server-observer, what do you see' not in msg.content.lower(): #ignores bots and messages with the activation phrase
+            if not msg.author.bot and '{}, what do you see'.format(client.user.name) not in msg.content.lower(): #ignores bots and messages with the activation phrase
                 chat_log_text += '{}\n'.format(msg.content)
         markgen = MarkovGenerator(chat_log_text)
         await client.send_message(message.channel, markgen.create_markov_chain_text(100))
