@@ -5,7 +5,7 @@ client = discord.Client()
 
 @client.event
 async def on_message(message):
-    if 'server-observer, what do you see' in message.content.lower():
+    if '{}, what do you see'.format(client.user.name) in message.content.lower():
         chat_log_text = ''
         async for msg in client.logs_from(message.channel, limit = 500):
             if not msg.author.bot and 'server-observer, what do you see' not in msg.content.lower(): #ignores bots and messages with the activation phrase
